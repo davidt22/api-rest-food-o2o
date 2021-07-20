@@ -2,6 +2,7 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-demo:
-    path: /
-    controller: App\Infrastructure\Controller\DefaultController::demo
+food:
+    path: /food/{value}
+    controller: App\Infrastructure\Controller\BeerController::getByFood
+    methods: [GET]

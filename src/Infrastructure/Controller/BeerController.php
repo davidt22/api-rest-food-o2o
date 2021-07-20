@@ -2,14 +2,21 @@
 
 namespace App\Infrastructure\Controller;
 
+use App\Application\SearchByFood\SearchBeersByFoodService;
+use App\Shared\Domain\Exception\ServiceException;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController
+class BeerController
 {
-    public function demo(string $name): JsonResponse
+    public function getByFood(string $value, SearchBeersByFoodService $searchBeersByFoodService): JsonResponse
     {
-        var_dump($name);
-        die;
-        return new JsonResponse('Hola');
+        try {
+            $result = $searchBeersByFoodService->execute($value);
+        } catch (ServiceException $exception) {
+            return new JsonResponse($exception->getMessage(), Response::HTTP_BAD_REQUEST);
+        }
+
+        return new JsonResponse($result);
     }
 }

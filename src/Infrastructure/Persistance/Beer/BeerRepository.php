@@ -18,12 +18,13 @@ class BeerRepository implements BeerRepositoryInterface
     /**
      * @throws RepositoryException
      */
-    public function searchByFood(string $food)
+    public function searchByFood(string $food): array
     {
         try {
             return $this->requestManager->get([
                 'food' => $food
             ]);
+
         } catch (\Exception $exception) {
             throw new RepositoryException($exception->getMessage());
         }

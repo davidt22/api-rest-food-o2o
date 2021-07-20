@@ -9,5 +9,5 @@ interface BeerRepositoryInterface
     /**
      * @throws RepositoryException
      */
-    public function searchByFood(string $food);
+    public function searchByFood(string $food): array;
 }

@@ -4,6 +4,7 @@ namespace App\Infrastructure\Service;
 
 use App\Shared\Domain\Exception\ExternalAPIException;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\HttpFoundation\Request;
 
 class RequestManager implements RequestManagerInterface
@@ -18,6 +19,10 @@ class RequestManager implements RequestManagerInterface
         $this->client = $client;
     }
 
+    /**
+     * @throws GuzzleException
+     * @throws ExternalAPIException
+     */
     public function get(array $params)
     {
         try {

@@ -26,7 +26,12 @@ class RequestManager implements RequestManagerInterface
     public function get(array $params)
     {
         try {
-            $uri = self::BASE_URL . '?' . http_build_query($params);
+            $uri = self::BASE_URL . '/';
+            if ($this->isAssociative($params)) {
+                $uri .= '?' . http_build_query($params);
+            } else {
+                $uri .= $params[0];
+            }
 
             $options = [
                 'headers' => [
@@ -42,5 +47,10 @@ class RequestManager implements RequestManagerInterface
         } catch (\Exception $exception) {
             throw new ExternalAPIException($exception->getMessage());
         }
+    }
+
+    private function isAssociative(array $array): bool
+    {
+        return ($array !== array_values($array));
     }
 }

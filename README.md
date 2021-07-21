@@ -33,9 +33,9 @@ Al terminar, se podra consultar la API desde la siguiente URL:
 Existen dos endpoints para consultar cervezas segun la comida recomendada.
 Dichos endpoints se pueden consultar desde el navegador o desde Postman(GET).
 
-- 127.0.0.1:12000/food/{comida} : Devuelve los tipos de cerveza recomendados para dicha comida (id, nombre, descripción)
+- 127.0.0.1:12000/food/{comida} : Devuelve las cervezas recomendados para dicha comida (id, nombre, descripción)
 
-- 127.0.0.1:12000/food/detail/{comida} : Devuelve los tipos de cerveza recomendados para dicha comida con información detallada (id, nombre, descripción, imagen, slogan y fabricación)
+- 127.0.0.1:12000/show/{id} : Devuelve el detalle de cerveza con información detallada (id, nombre, descripción, imagen, slogan y fabricación)
 
 ## Tests (PHPUnit)
 Se han incluido tests unitarios, y funcionales para testear que tanto los application service como los controllers hacen lo que tienen que hacer y devuelven la información que se pide en el ejercicio.
@@ -61,7 +61,7 @@ para separar la logica en capas.
 
 Los tests siguen la misma estructura de directorios.
 
-La dodificación sigue los PSR marcados.
+La codificación sigue los PSR marcados.
 
 El proyecto usa git-flow, el cual contiene las siguientes ramas:
 

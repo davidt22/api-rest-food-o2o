@@ -29,4 +29,13 @@ class BeerRepository implements BeerRepositoryInterface
             throw new RepositoryException($exception->getMessage());
         }
     }
+
+    public function getById(int $id)
+    {
+        try {
+            return $this->requestManager->get([$id]);
+        } catch (\Exception $exception) {
+            throw new RepositoryException($exception->getMessage());
+        }
+    }
 }

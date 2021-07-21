@@ -3,7 +3,9 @@ by_food:
     controller: App\Infrastructure\Controller\SearchBeerController::getByFood
     methods: [GET]
 
-by_food_detail:
-  path: /food/detail/{value}
-  controller: App\Infrastructure\Controller\SearchBeerController::getByFoodDetail
+beer_detail:
+  path: /show/{id}
+  controller: App\Infrastructure\Controller\ShowBeerController::show
   methods: [GET]
+  requirements:
+    id: \d+

@@ -10,4 +10,6 @@ interface BeerRepositoryInterface
      * @throws RepositoryException
      */
     public function searchByFood(string $food): array;
+
+    public function getById(int $id);
 }

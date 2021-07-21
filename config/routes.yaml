@@ -1,3 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+by_food:
+    path: /food/{value}
+    controller: App\Infrastructure\Controller\SearchBeerController::getByFood
+    methods: [GET]
+
+by_food_detail:
+  path: /food/detail/{value}
+  controller: App\Infrastructure\Controller\SearchBeerController::getByFoodDetail
+  methods: [GET]

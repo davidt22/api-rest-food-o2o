@@ -1,4 +1,4 @@
-# Solucion ejercicio de entrevista técnica
+# Solucion ejercicio
 
 ## Requerimientos
 Se deben crear 2 servicios utilizando Symfony 4:
